@@ -190,7 +190,7 @@ export default class echoPage {
       }
 
       async ClickCookie() {
-            const ele = this.page.locator("//button[text()='I Agree']")
+            const ele = this.page.locator("(//button[text()='I AGREE'])[2]")
             expect(ele).toBeEnabled()
             await ele.click()
       }

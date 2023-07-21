@@ -204,7 +204,7 @@ export default class KickzSite {
         await ele.click()
     }
 
-    // Luyamaya ordering
+    // Luyamaya order complete
 
     async clickHomeorder(){
       const ele = this.page.locator("//span[text()='HOME']")
@@ -265,9 +265,156 @@ export default class KickzSite {
       const locator = this.page.locator("input[name='code']")
       expect(locator).toBeVisible()
       await locator.fill("THANKS-Z8PDZBF")
-  }
+    }
+    async clickclosespan(){
+      const ele = this.page.locator("//span[@class='cancel-span']")
+      expect(ele).toBeEnabled()
+      await ele.click()
+    }
     async clickZurKasse(){
-      const ele = this.page.locator("//button[text()='Zur Kasse']")
+      const ele = this.page.locator("//button[@class='cart__checkout-button button']")
+      expect(ele).toBeEnabled()
+      // await ele.click()
+      await ele.click({ force: true })
+    }
+    async inputEmail() {
+      const locator = this.page.locator("//label[@for='checkout_email']")
+      expect(locator).toBeVisible()
+      await locator.fill("abc@gmail.com")
+    }
+    async clickSubscription(){
+      const ele = this.page.locator("//input[@type='checkbox']")
+      expect(ele).toBeEnabled()
+      await ele.click()
+    }
+    async inputFirstname() {
+      const locator = this.page.locator("//input[@data-backup='first_name']")
+      expect(locator).toBeVisible()
+      await locator.fill("Mohammad")
+    }
+    async inputLastname() {
+      const locator = this.page.locator("//input[@data-backup='last_name']")
+      expect(locator).toBeVisible()
+      await locator.fill("Sohag")
+    }
+    async inputAddress() {
+      const locator = this.page.locator("(//input[@name='checkout[shipping_address][address1]'])[2]")
+      expect(locator).toBeVisible()
+      await locator.fill("Muradpur")
+    }
+    async inputDivision() {
+      const locator = this.page.locator("//input[@data-backup='address2']")
+      expect(locator).toBeVisible()
+      await locator.fill("Chattogram")
+    }
+    async inputCity() {
+      const locator = this.page.locator("//input[@data-backup='city']")
+      expect(locator).toBeVisible()
+      await locator.fill("Chattogram")
+    }
+    async inputPostcode() {
+      const locator = this.page.locator("input[placeholder='Postleitzahl']")
+      expect(locator).toBeVisible()
+      await locator.fill("3535")
+    }
+    async clickWeiterzum(){
+      const ele = this.page.locator("button[name='button']")
+      expect(ele).toBeEnabled()
+      await ele.click()
+    }
+    async clickWeiterzur(){
+      const ele = this.page.locator("(//button[@type='submit'])[1]")
+      expect(ele).toBeEnabled()
+      await ele.click()
+    }
+    async clickKaufen(){
+      const ele = this.page.locator("(//button[@name='button'])[1]")
+      expect(ele).toBeEnabled()
+      await ele.click()
+    }
+
+    // Luyamaya filter section Automation
+    // Availability
+
+    async clickAvalabilitydropdown(){
+      const ele = this.page.locator("(//span[text()='Verfügbarkeit'])[1]")
+      expect(ele).toBeEnabled()
+      await ele.click({ force: true })
+    }
+    async clickAbltycheckbox1(){
+      const ele = this.page.locator("(//input[@type='checkbox'])[1]")
+      expect(ele).toBeEnabled()
+      await ele.click({ force: true })
+    }
+    async clickClosecheckbox1(){
+      const ele = this.page.locator("(//a[@role='button']//span)[2]")
+      expect(ele).toBeEnabled()
+      await ele.click({ force: true })
+    }
+
+    // Price
+
+    async clickPricedropdown(){
+      const ele = this.page.locator("(//span[text()='Preis'])[1]")
+      expect(ele).toBeEnabled()
+      await ele.click({ force: true })
+    }
+    async InputPricerange(){
+      const locator = this.page.locator("(//input[@max='4290'])[1]")
+      expect(locator).toBeVisible()
+      await locator.fill("3")
+    }
+    async clickClosepricecheckbox1(){
+      const ele = this.page.locator("(//a[@role='button']//span)[2]")
+      expect(ele).toBeEnabled()
+      await ele.click({ force: true })
+    }
+
+    // Product type
+
+    async clickProducttype(){
+      const ele = this.page.locator("(//span[text()='Produkttyp'])[1]")
+      expect(ele).toBeEnabled()
+      await ele.click({ force: true })
+    }
+    async clickprodctcheckbox2(){
+      const ele = this.page.locator("(//input[@id='Filter-Produkttyp-2'])[1]")
+      expect(ele).toBeEnabled()
+      await ele.click({ force: true })
+    }
+    async clickCloseproducttype2(){
+      const ele = this.page.locator("(//a[@role='button']//span)[2]")
+      expect(ele).toBeEnabled()
+      await ele.click({ force: true })
+    }
+
+    // Select
+
+    async clickSelect(){
+      const ele = this.page.locator("(//select[@name='sort_by'])[1]")
+      expect(ele).toBeEnabled()
+      await ele.click({ force: true })
+    }
+    async clickforchoose(){
+      const ele = this.page.locator("(//select[@name='sort_by'])[1]")
+      expect(ele).toBeEnabled()
+      await ele.click({ force: true })
+    }
+
+    // Grobe
+
+    async clickGrobe(){
+      const ele = this.page.locator("(//span[text()='Größe'])[1]")
+      expect(ele).toBeEnabled()
+      await ele.click({ force: true })
+    }
+    async clickGrobeCK1(){
+      const ele = this.page.locator("(//input[@value='Small'])[1]")
+      expect(ele).toBeEnabled()
+      await ele.click({ force: true })
+    }
+    async clickcloseGroberesult(){
+      const ele = this.page.locator("(//span[contains(@class,'active-facets__button-inner button')])[2]")
       expect(ele).toBeEnabled()
       await ele.click({ force: true })
     }
