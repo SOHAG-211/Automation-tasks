@@ -198,7 +198,7 @@ test("Validate Luyamaya Kollectionen", async ({ echoPage, functions, KickzSite, 
 
   })
 
-  test.only("Validate Luyamaya Filter section", async ({ echoPage, functions, KickzSite, page }, testInfo) => {
+  test("Validate Luyamaya Filter section", async ({ echoPage, functions, KickzSite, page }, testInfo) => {
 
     await page.goto("/")
     
@@ -209,6 +209,7 @@ test("Validate Luyamaya Kollectionen", async ({ echoPage, functions, KickzSite, 
       })
   // Availability
   await KickzSite.Clickcookie1();
+  await page.waitForTimeout(1000);
   await KickzSite.Clickcookie2();
   await KickzSite.clickclosespan();
   await KickzSite.clickKATEGORIEN();
@@ -254,5 +255,70 @@ test("Validate Luyamaya Kollectionen", async ({ echoPage, functions, KickzSite, 
   // await page.waitForTimeout(1000);
   await KickzSite.clickforchoose();
   
+
+})
+
+test.only("Validate Searching product of Luyamaya", async ({ echoPage, functions, KickzSite, page }, testInfo) => {
+
+  await page.goto("/")
+  
+    const screenshot = await page.screenshot();
+    await testInfo.attach(" screenshot", {
+          contentType: "image/png",
+          body: screenshot
+    })
+
+await KickzSite.Clickcookie1();
+await page.waitForTimeout(1000);
+await KickzSite.Clickcookie2();
+await page.waitForTimeout(1000);
+await KickzSite.clicksearch();
+await page.waitForTimeout(1000);
+await KickzSite.clickSearch1();
+await page.waitForTimeout(1000);
+await KickzSite.clickclosesrch();
+await KickzSite.clicksearch();
+await page.waitForTimeout(1000);
+await KickzSite.inputSearchingdata();
+await KickzSite.clickSearch1();
+await page.waitForTimeout(3000);
+await KickzSite.clickclosespan();
+await KickzSite.clickAddwishlist1();
+await page.waitForTimeout(1000);
+await KickzSite.clickAddwishlist3();
+await page.waitForTimeout(1000);
+await KickzSite.clickwishlistbtn();
+await page.waitForTimeout(3000);
+await KickzSite.clickDeletewishlist1();
+await page.waitForTimeout(1000);
+await KickzSite.clickDeletewishlist3();
+await KickzSite.clicksearch();
+await page.waitForTimeout(1000);
+await KickzSite.inputSearchingdata();
+await KickzSite.clickSearch1();
+await page.waitForTimeout(3000);
+await KickzSite.clickgoldring();
+await KickzSite.clickInden();
+await page.waitForTimeout(1000);
+await KickzSite.clickIncrease();
+await page.waitForTimeout(1000);
+await KickzSite.clickdecrease();
+// await KickzSite.clickclosespan();
+await KickzSite.clickZurKasse();
+await page.waitForTimeout(3000);
+await KickzSite.inputEmail();
+await KickzSite.clickSubscription();
+await KickzSite.inputFirstname();
+await KickzSite.inputLastname();
+await KickzSite.inputAddress();
+await KickzSite.inputDivision();
+await KickzSite.inputCity();
+await KickzSite.inputPostcode();
+await KickzSite.clickWeiterzum();
+await page.waitForTimeout(3000);
+await KickzSite.clickWeiterzur();
+await page.waitForTimeout(3000);
+await KickzSite.clickKaufen();
+await page.waitForTimeout(3000);
 
 })

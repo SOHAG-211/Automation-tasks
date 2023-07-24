@@ -13,14 +13,14 @@ export default class KickzSite {
     //   Kategorien automation
 
       async Clickcookie1() {
-        const ele = this.page.locator("//button[@aria-label='Close form 3']")
+        const ele = this.page.locator("//button[@aria-label='Close form 4']")
         expect(ele).toBeEnabled()
-        await ele.click()
+        await ele.click({ force: true })
       }
       async Clickcookie2() {
-        const ele = this.page.locator("//button[@aria-label='Close form 2']")
+        const ele = this.page.locator("//button[@aria-label='Close form 3']")
         expect(ele).toBeEnabled()
-        await ele.click()
+        await ele.click({ force: true })
       }
       async clickKATEGORIEN(){
         const ele = this.page.locator("//span[text()='KATEGORIEN']")
@@ -417,6 +417,59 @@ export default class KickzSite {
       const ele = this.page.locator("(//span[contains(@class,'active-facets__button-inner button')])[2]")
       expect(ele).toBeEnabled()
       await ele.click({ force: true })
+    }
+
+    // Searching product and add to the cart
+
+    async clicksearch(){
+      const ele = this.page.locator("(//summary[@role='button']//span)[2]")
+      expect(ele).toBeEnabled()
+      await ele.click()
+    }
+    async clickSearch1(){
+      const ele = this.page.locator("(//button[@aria-label='Suchen'])[1]")
+      expect(ele).toBeEnabled()
+      await ele.click()
+    }
+    async clickclosesrch(){
+      const ele = this.page.locator("(//button[contains(@class,'modal__close-button link')])[1]")
+      expect(ele).toBeEnabled()
+      await ele.click()
+    }
+    async inputSearchingdata() {
+      const locator = this.page.locator("(//input[@name='q'])[1]")
+      expect(locator).toBeVisible()
+      await locator.fill("Gold ring")
+    }
+    async clickAddwishlist1(){
+      const ele = this.page.locator("(//div[@class='heart-background'])[1]")
+      expect(ele).toBeEnabled()
+      await ele.click()
+    }
+    async clickAddwishlist3(){
+      const ele = this.page.locator("(//div[@class='heart-background'])[3]")
+      expect(ele).toBeEnabled()
+      await ele.click()
+    }
+    async clickwishlistbtn(){
+      const ele = this.page.locator("#wish-icon-bubble")
+      expect(ele).toBeEnabled()
+      await ele.click()
+    }
+    async clickDeletewishlist1(){
+      const ele = this.page.locator("(//span[@class='delete-icon'])[1]")
+      expect(ele).toBeEnabled()
+      await ele.click()
+    }
+    async clickDeletewishlist3(){
+      const ele = this.page.locator("(//span[@class='delete-icon'])[1]")
+      expect(ele).toBeEnabled()
+      await ele.click()
+    }
+    async clickgoldring(){
+      const ele = this.page.locator("//h3[@id='title--4592924524617']")
+      expect(ele).toBeEnabled()
+      await ele.click()
     }
 
 
