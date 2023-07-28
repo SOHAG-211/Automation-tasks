@@ -56,7 +56,9 @@ const config: PlaywrightTestConfig = {
 
         // baseURL: "https://echologyx.com/",
         // baseURL: "https://www.shohoz.com/",
-        baseURL: "https://www.luamaya.com/",
+        // baseURL: "https://www.luamaya.com/",
+        baseURL: "https://ninetypercent.com/",
+
         // extraHTTPHeaders: {
         //     "Authorization": "Basic YWRtaW46U0NxN2pDb2tDbFI4"
         // }
@@ -107,7 +109,8 @@ const config: PlaywrightTestConfig = {
                 // "012AUpdateecho.test.ts",
                 // "Echoltd.test.ts",
                 // "Echosite.test.ts",
-                "Neu.test.ts"
+                // "Neu.test.ts",
+                "NinetyHeader.test.ts"
                 
             
                 

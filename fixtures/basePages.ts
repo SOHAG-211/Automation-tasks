@@ -5,6 +5,7 @@ import echoPage from "@pages/Echologyxldt.page";
 import echoPageMob from "@pages/MobEchologyxltd.page";
 import echologyxSite from "@pages/Echosite.page";
 import KickzSite from "@pages/Neu.page";
+import Ninetypercent from "@pages/NinetyPercentHeader.page";
 
 
 
@@ -17,6 +18,7 @@ const test = baseTest.extend<{
     echoPageMob: echoPageMob;
     echologyxSite: echologyxSite;
     KickzSite: KickzSite;
+    Ninetypercent: Ninetypercent;
 
 
 }>({
@@ -40,6 +42,9 @@ const test = baseTest.extend<{
      },
      KickzSite: async ({ page }, use) => {
       await use(new KickzSite(page));
+   },
+   Ninetypercent: async ({ page }, use) => {
+      await use(new Ninetypercent(page));
    },
      
     

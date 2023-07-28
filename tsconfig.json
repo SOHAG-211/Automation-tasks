@@ -20,7 +20,8 @@
                     "pages/onDemandPage/*",
                     "pages/echoPageMob/*",
                     "pages/EchologyxPage/*",
-                    "pages/Kickz/*"
+                    "pages/Kickz/*",
+                    "pages/NinetyPercent/*"
                 ],
                 "@fixtures/*": [
                     "fixtures/*"
