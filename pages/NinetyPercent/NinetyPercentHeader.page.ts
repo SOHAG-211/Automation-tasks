@@ -226,7 +226,7 @@ export default class Ninetypercent {
         await ele.click()
       }
       async ClickBillingaddress() {
-        const locator = this.page.selectOption("//div[@class='j2JE7']//select[1]", { value: "Bangladesh" })
+        const locator = this.page.selectOption("//select[contains(@class,'_b6uH RR8sg')]", { value: "BD" })
         
       }
       async inputFirstname() {
@@ -262,7 +262,8 @@ export default class Ninetypercent {
       async inputpostcode() {
         const locator = this.page.locator("(//input[@name='postalCode'])[1]")
         expect(locator).toBeVisible()
-        await locator.fill("CV23 0AE")
+        await locator.fill("3535")
+        // await locator.fill("CV23 0AE")
       }
       async inputPhonenumber() {
         const locator = this.page.locator("//input[@placeholder='Phone']")
@@ -271,6 +272,36 @@ export default class Ninetypercent {
       }
       async clickPayment(){
         const ele = this.page.locator("(//button[@type='submit'])[1]")
+        expect(ele).toBeEnabled()
+        await ele.click()
+      }
+      async clickcreditcard(){
+        const ele = this.page.locator("(//input[@name='basic'])[1]")
+        expect(ele).toBeEnabled()
+        await ele.click()
+      }
+      async clickclearpay(){
+        const ele = this.page.locator("(//input[@name='basic'])[3]")
+        expect(ele).toBeEnabled()
+        await ele.click()
+      }
+      async clickklarna(){
+        const ele = this.page.locator("(//input[@name='basic'])[4]")
+        expect(ele).toBeEnabled()
+        await ele.click()
+      }
+      async clickPayPal(){
+        const ele = this.page.locator("(//input[@name='basic'])[2]")
+        expect(ele).toBeEnabled()
+        await ele.click()
+      }
+      async clickrevieworder(){
+        const ele = this.page.locator("//div[@class='oQEAZ WD4IV']//button[1]")
+        expect(ele).toBeEnabled()
+        await ele.click()
+      }
+      async clickPayPald(){
+        const ele = this.page.locator("(//div[@class='oQEAZ WD4IV']//div)[1]")
         expect(ele).toBeEnabled()
         await ele.click()
       }

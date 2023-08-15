@@ -125,8 +125,8 @@ test.only("Validate Gift card checkout", async ({ Ninetypercent, page }, testInf
               await page.waitForTimeout(1000);
               await Ninetypercent.clickSubscription();
               await page.waitForTimeout(1000);
-            //   await Ninetypercent.ClickBillingaddress();
-            //   await page.waitForTimeout(1000);
+              await Ninetypercent.ClickBillingaddress();
+              await page.waitForTimeout(1000);
               await Ninetypercent.inputFirstname();
               await page.waitForTimeout(1000);
               await Ninetypercent.inputLastname();
@@ -145,5 +145,19 @@ test.only("Validate Gift card checkout", async ({ Ninetypercent, page }, testInf
               await page.waitForTimeout(1000);
               await Ninetypercent.clickPayment();
               await page.waitForTimeout(3000);
+              await Ninetypercent.clickcreditcard();
+              await page.waitForTimeout(1000);
+              await Ninetypercent.clickclearpay();
+              await page.waitForTimeout(1000);
+              await Ninetypercent.clickklarna();
+              await page.waitForTimeout(1000);
+              await Ninetypercent.clickPayPal();
+              await page.waitForTimeout(1000);
+              await Ninetypercent.clickrevieworder();
+              await page.waitForTimeout(3000);
+              await Ninetypercent.clickPayPald();
+              await page.waitForTimeout(3000);
+              // await Ninetypercent.inputPhonenumber();
+              // await page.waitForTimeout(1000);
 
             }) 
